@@ -1,0 +1,20 @@
+  <mat-stepper>
+    <mat-step>
+      <ng-template matStepLabel>Select your room</ng-template>
+      <mat-card>
+        <mat-card-header (click)="onCardClick()" style="cursor: pointer;">chambre 1</mat-card-header>
+        <mat-card-content (click)="onCardClick()" style="cursor: pointer;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iusto ad earum temporibus quaerat impedit fugit quas placeat eaque quod doloribus natus perspiciatis pariatur quia eligendi, minima delectus sunt laborum!</mat-card-content>
+        <mat-card-footer><button mat-button> hello</button></mat-card-footer>
+      </mat-card>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Date</ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Do you want services ?</ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+    </mat-step>
+  </mat-stepper>
+  <router-outlet></router-outlet>

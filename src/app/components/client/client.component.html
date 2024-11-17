@@ -1,0 +1,17 @@
+<mat-toolbar class="toolbar">
+    <!-- <button mat-icon-button>
+      <mat-icon>Home</mat-icon>
+    </button> -->
+    <button color="primary" mat-button routerLink="/client" routerLinkActive="primary">Home</button>
+    <button mat-button color="primary">Bookings</button>
+    <span></span>
+    <span class="example-spacer"></span>
+    <!-- <button mat-icon-button>
+      <mat-icon color="primary">favorite</mat-icon>
+    </button> -->
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+    <button mat-flat-button color="primary" (click)="logout()">Se deconnecter</button>
+  </mat-toolbar>
+<router-outlet></router-outlet>
