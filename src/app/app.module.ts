@@ -22,7 +22,12 @@ import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard';
-
+import {DialogModule} from '@angular/cdk/dialog';
+import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core'
+import {JsonPipe} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import { AuthGuard } from './guards/auth.guard';
     BookingsComponent,
     ClientComponent,
     ReceptionistComponent,
-    AdminComponent
+    AdminComponent,
+    DialogConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -47,13 +53,18 @@ import { AuthGuard } from './guards/auth.guard';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
-  
+    ReactiveFormsModule,
+    DialogModule,
+    MatDatepickerModule,
+    JsonPipe,
+    MatSelectModule
   ],
   providers: [
     provideAnimationsAsync(),
+    provideNativeDateAdapter(),
     AuthGuard
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

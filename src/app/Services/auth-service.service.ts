@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   public logout(){
-    this.http.get<People>(`${this.apiUrl}/logout`).subscribe(
+    this.http.post(`${this.apiUrl}/logout`, { withCredentials: true }).subscribe(
       {
         next:res =>{
           console.log("Logout successful");
@@ -38,12 +38,10 @@ export class AuthService {
           localStorage.removeItem("people")
         },
         error:err =>{
-          console.log("error during logout");
+          console.log(err);
         }
       }
     );
     this.route.navigateByUrl("/login");
-    this.authenticated = false;
-    
   }
 }
