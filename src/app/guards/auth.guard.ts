@@ -9,12 +9,19 @@ export class AuthGuard{
     
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    let auth = localStorage.getItem("authenticated")
-    if(auth != null){
-      auth = JSON.parse(auth)
-      console.log(auth)
-      if(auth){
-        return true
+    let str = localStorage.getItem("date")
+    if(str != null){
+      let previousDate:number = JSON.parse(str)
+      let now = Date.now()
+      if(now - previousDate < 1800000){
+        let auth = localStorage.getItem("authenticated")
+        if(auth != null){
+          auth = JSON.parse(auth)
+          console.log(auth)
+          if(auth){
+            return true
+          }
+        }
       }
     }
     this.router.navigateByUrl("/login") 

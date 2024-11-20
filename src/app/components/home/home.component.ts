@@ -1,8 +1,7 @@
-import { Dialog, DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
+import {Dialog} from '@angular/cdk/dialog';
 import { Component, inject } from '@angular/core';
 import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 import { FormControl, FormGroup } from '@angular/forms';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-home',

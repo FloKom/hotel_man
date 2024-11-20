@@ -28,6 +28,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core'
 import {JsonPipe} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
+import { NewAccountComponent } from './components/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatSelectModule} from '@angular/material/select';
     ClientComponent,
     ReceptionistComponent,
     AdminComponent,
-    DialogConfirmComponent
+    DialogConfirmComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

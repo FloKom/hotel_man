@@ -1,13 +1,13 @@
 <mat-card>
     <mat-card-content>
-        {{people |json}}
-      <form [formGroup]="loginFormGroup">
-        <h2>Log In</h2>
+        <!-- {{people |json}} -->
+      <form>
+        <h2>Create Account</h2>
         <!-- <mat-error>
           The username and password were not recognized
         </mat-error> -->
         <mat-form-field appearance="outline">
-          <input matInput placeholder="Email" name="username" required formControlName="username">
+          <input matInput placeholder="Email" name="email" required formControlName="email">
           <mat-error>
             Please provide a valid email address
           </mat-error>
@@ -18,8 +18,14 @@
             Please provide a valid password
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="login()">Login</button>
-        <button mat-button color="primary" [routerLink]="'/create'"> Creer un compte</button>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="Username" name="username" required formControlName="username">
+            <mat-error>
+                Please provide a valid password
+            </mat-error>
+        </mat-form-field>
+        
+            <button mat-raised-button color="primary">Create</button>        
       </form>
     </mat-card-content>
   </mat-card>

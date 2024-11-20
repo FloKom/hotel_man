@@ -25,6 +25,8 @@ export class AuthService {
 
   public Login(email:string, password:string): Observable<People>{
     console.log({email,password})
+    let date:number = Date.now();
+    localStorage.setItem("date", JSON.stringify(date))
     return this.http.post<People>(`${this.apiUrl}/login`, {email,password});
   }
 
